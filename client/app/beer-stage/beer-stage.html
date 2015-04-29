@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <h2>{{state.name}}</h2>
+  <table class="table">
+    <tr>
+    <th>Incoming</th>
+    <th>Available</th>
+    <th>New Order</th>
+    <th>To Ship</th>
+    <th>Your Delivery</th>
+    <th>Backorder</th>
+    <th>Inventory</th>
+    <th>Your Order</th>
+    <th>Cost</th>
+    </tr>
+    <tr class="current">
+      <td>{{state.current.incoming}}</td>
+      <td>{{state.current.incoming+state.last.inventory}}</td>
+      <td>{{state.current.newOrder}}</td>
+      <td>{{state.last.backorder+state.current.newOrder}}</td>
+      <td>{{state.current.delivery}}</td>
+      <td>{{state.current.backorder}}</td>
+      <td>{{state.current.inventory}}</td>
+      <td><input ng-model="state.current.yourOrder" /></td>
+      <td>{{state.current.inventory*0.5+state.current.backorder*1}}</td>
+    </tr>
+  </table>
+</div>
