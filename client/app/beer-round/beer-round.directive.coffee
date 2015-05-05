@@ -8,4 +8,3 @@ angular.module 'beerApp'
     state: '='
     editable: '='
   link: (scope, element, attrs) ->
-    

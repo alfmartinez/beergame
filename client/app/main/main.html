@@ -1,7 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <beer-stage state="state"/>
+  <form ng-submit="order()">
+    <beer-stage state="state" />
+  </form>
 </div>
 
 <footer class="footer">
