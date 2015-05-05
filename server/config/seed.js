@@ -7,43 +7,85 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Round = require('../api/round/round.model');
 
-Thing.find({}).remove(function() {
-  Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
-  },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
-  });
+Round.find({}).remove(function() {
+	Round.create({
+		round: 1,
+		incoming: 5,
+		available: 20,
+		newOrder: 9,
+		toShip: 9,
+		delivery: 9,
+		backorder: 0,
+		inventory: 11,
+		yourOrder: 5,
+		cost: 5.5,
+		factory: 1
+	}, {
+		round: 2,
+		incoming: 5,
+		available: 16,
+		newOrder: 9,
+		toShip: 9,
+		delivery: 9,
+		backorder: 0,
+		inventory: 7,
+		yourOrder: 5,
+		cost: 9,
+		factory: 1
+	}, {
+		round: 3,
+		incoming: 5,
+		available: 12,
+		newOrder: 9,
+		toShip: 9,
+		delivery: 9,
+		backorder: 0,
+		inventory: 3,
+		yourOrder: 5,
+		cost: 10.5,
+		factory: 1
+	}, {
+		round: 4,
+		incoming: 5,
+		available: 8,
+		newOrder: 9,
+		toShip: 9,
+		delivery: 8,
+		backorder: 1,
+		inventory: 0,
+		yourOrder: 5,
+		cost: 11.5,
+		factory: 1
+	}, {
+		round: 1,
+		incoming: 5,
+		available: 8,
+		newOrder: 9,
+		toShip: 9,
+		delivery: 8,
+		backorder: 1,
+		inventory: 0,
+		yourOrder: 5,
+		cost: 11.5,
+		factory: 2
+	})
 });
 
 User.find({}).remove(function() {
-  User.create({
-    provider: 'local',
-    name: 'Test User',
-    email: 'test@test.com',
-    password: 'test'
-  }, {
-    provider: 'local',
-    role: 'admin',
-    name: 'Admin',
-    email: 'admin@admin.com',
-    password: 'admin'
-  }, function() {
-      console.log('finished populating users');
-    }
-  );
+	User.create({
+		provider: 'local',
+		name: 'Test User',
+		email: 'test@test.com',
+		password: 'test'
+	}, {
+		provider: 'local',
+		role: 'admin',
+		name: 'Admin',
+		email: 'admin@admin.com',
+		password: 'admin'
+	}, function() {
+		console.log('finished populating users');
+	});
 });
