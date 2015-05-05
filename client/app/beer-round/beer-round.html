@@ -1,0 +1,11 @@
+<td>{{state.round}}</td>
+<td>{{state.incoming}}</td>
+<td>{{state.available}}</td>
+<td>{{state.newOrder}}</td>
+<td>{{state.toShip}}</td>
+<td>{{state.delivery}}</td>
+<td>{{state.backorder}}</td>
+<td>{{state.inventory}}</td>
+<td ng-if="!editable">{{state.yourOrder}}</td>
+<td ng-if="editable"><input ng-model="state.yourOrder"/></td>
+<td>{{state.cost}}</td>
